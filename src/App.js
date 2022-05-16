@@ -5,7 +5,6 @@ import QuestionList from "./components/QuestionList/QuestionList"
 
 export default function App() {
     const [startGame, setStartGame] = React.useState(false)
-    const [showNoQuestionsError, setShowNoQuestionsError] = React.useState(false)
 
     const [selectOption, setSelectOption] = React.useState(
         {category: "",
@@ -18,7 +17,7 @@ export default function App() {
         setStartGame(prevStart => !prevStart)
     }
     
-    const handleNoQuestionError = boolean => setShowNoQuestionsError(boolean);
+  
 
     function handleChange(event) {
         const{name, value} = event.target
