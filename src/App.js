@@ -5,6 +5,7 @@ import QuestionList from "./components/QuestionList/QuestionList"
 
 export default function App() {
     const [startGame, setStartGame] = React.useState(false)
+    const [showNoQuestionsError, setShowNoQuestionsError] = React.useState(false)
 
     const [selectOption, setSelectOption] = React.useState(
         {category: "",
@@ -17,7 +18,7 @@ export default function App() {
         setStartGame(prevStart => !prevStart)
     }
     
-  
+  const handleNoQuestionError = boolean => setShowNoQuestionsError(boolean);
 
     function handleChange(event) {
         const{name, value} = event.target
@@ -46,7 +47,11 @@ export default function App() {
             <section className="start-container">
                 <h1 className="game-title">Quizzical</h1>
                 <p className="game-text">Let's Go!!!!</p>
-                
+                	{showNoQuestionsError &&
+							<h2 className="noQuestions-text">
+								No Questions Found.
+							</h2>
+						}
                 <div className="game-difficulty section">
                     <div className="category-section select-bar">
                         <label className="label-name" htmlFor="category">Category:</label>
