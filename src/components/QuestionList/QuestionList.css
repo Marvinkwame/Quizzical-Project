@@ -1,7 +1,8 @@
 .questionList-container {
 	width: 700px;
 	display: flex;
-	flex-direction: column
+	flex-direction: column;
+	margin-top: 2rem;
 }
 
 .btn-check-answers {
